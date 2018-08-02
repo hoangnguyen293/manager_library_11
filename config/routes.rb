@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     resources :authors
     resources :books
     resources :users
+    resources :borrows, except: %i(create update)
   end
 end

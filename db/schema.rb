@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_08_01_025918) do
   create_table "borrows", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "borrowed_date"
     t.date "returned_date"
+    t.datetime "real_borrowed_date"
     t.integer "status", default: 0, null: false
     t.bigint "user_id"
     t.bigint "book_id"

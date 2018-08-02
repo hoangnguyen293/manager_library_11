@@ -1,0 +1,11 @@
+<tr>
+  <td><%= borrow.borrowed_date %></td>
+  <td><%= borrow.returned_date %></td>
+  <td><%= borrow.real_borrowed_date %></td>
+  <td><%= borrow.status %></td>
+  <td class="text-nowrap">
+    <%= send_action_tag admin_borrow_path(borrow) if borrow.waiting? %>
+    <%= borrowed_action_tag edit_admin_borrow_path(borrow) if borrow.sent? %>
+    <%= delete_action_tag admin_borrow_path(borrow) %>
+  </td>
+</tr>

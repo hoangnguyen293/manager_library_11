@@ -1,0 +1,13 @@
+<h1><%= t "mailer.library_management" %></h1>
+
+<p><%= t "mailer.hi" %> <%= @borrow.user.name %>,</p>
+
+<p>
+  <%= t "mailer.congratulate" %>
+</p>
+<div>
+  <h3><%= t "mailer.infor_loan" %></h3>
+  <p><%= t "mailer.book" %>: <%= @borrow.book.name %></p>
+  <p><%= t "mailer.borrowed_date" %>: <%= @borrow.borrowed_date %></p>
+  <p><%= t "mailer.returned_date" %>: <%= @borrow.returned_date %></p>
+</div>

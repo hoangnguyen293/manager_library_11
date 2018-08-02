@@ -149,6 +149,26 @@ en:
       role: "Role"
       not_delete: "Don't have role to delete"
       not_access: "Don't access"
+    borrows:
+      index:
+        title: "All borrowed requests"
+        borrows: "borrowed requests"
+        borrowed_date: "Borrowed date"
+        returned_date: "Returned date"
+        real_borrowed_date: "Real borrowed date"
+        status: "Status"
+      destroy:
+        delete_failed: "Delete failed"
+        borrow_deleted: "Borrowed request deleted"
+      edit:
+        borrowed_success: "User borrowed"
+        borrow_fail: "user borrow fail"
+      show:
+        email_sent: "Email sent success"
+        update_fail: "update status fail"
+      not_found_borrow: "Not found borrowed request"
+      error_email_sent: "Email sent or borrowed"
+      error_borrowed: "Email is not sent or borrowed"
   home:
     index:
       title: "Home"
@@ -190,11 +210,24 @@ en:
   shared:
     form_constain: "The form contains"
     error: "error"
+  mailer:
+    library_management: "Library management"
+    hi: "Hi"
+    accept_request: "Accept the book loan request"
+    congratulate: "Congratulation! the book loan request of you was accepted"
+    infor_loan: "Information of your loan"
+    book: "Book"
+    borrowed_date: "Borrowed date"
+    returned_date: "Returned date"
+    error_email_sent: "Send mail failed"
   add: "Add"
   edit: "Edit"
+  borrowed: "Borrowed"
+  send: "Send"
   delete: "Delete"
   action: "Action"
   back: "Back"
   you_sure: "You sure?"
   submit: "Submit"
+
 

@@ -23,6 +23,7 @@ users_per_page: 5
 max_length_user: 50
 max_length_user_email: 255
 min_length_user_password: 6
+borrows_per_page: 5
 categories:
   books_per_page: 8
 books:
