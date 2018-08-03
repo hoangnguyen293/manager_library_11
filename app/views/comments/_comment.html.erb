@@ -1,0 +1,11 @@
+<li>
+  <div class="kode-thumb">
+    <img alt="" src="/assets/user.png">
+  </div>
+  <div class="kode-text">
+    <h4><%= comment.user.name %></h4>
+    <p class="designation"><%= comment.created_at %></p>
+    <p>Rating: <%= comment.rate %>/<%= Settings.comments.max_rate %></p>
+    <p><%= comment.content %></p>
+  </div>
+</li>

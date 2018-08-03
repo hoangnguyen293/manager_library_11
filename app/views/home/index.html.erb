@@ -1,1 +1,53 @@
 <% provide :title, t(".title") %>
+<div class="search-section">
+  <div class="container">
+    <div class="tab-content">
+      <div>
+        <div class="form-container">
+          <div class="row">
+            <%= render "form_search" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="kode-content">
+  <section class="lib-categories-section">
+    <div class="container">
+      <div class="section-heading-1 dark-sec">
+        <h2><%= t ".top_categories" %></h2>
+        <p><%= t ".some_of_the_top" %></p>
+        <div class="kode-icon"><i class="fa fa-book"></i></div>
+      </div>
+      <ul class="nav nav-tabs">
+        <%= render partial: "categories/top_category", collection: @support.top_categories, as: :category %>
+      </ul>
+      <div class="row">
+        <div id="books_for_top_categories">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="section-heading-1">
+        <h2>Latest Books</h2>
+        <div class="kode-icon"><i class="fa fa-book"></i></div>
+      </div>
+      <div class="row">
+        <%= render partial: "books/book", collection: @support.latest_books, as: :book %>
+      </div>
+    </div>
+  </section>
+  <section class="kode-lib-team-member">
+    <div class="container">
+      <div class="section-heading-1">
+        <h2><%= t ".top_authors" %></h2>
+        <p><%= t ".some_of_the_top_author" %></p>
+        <div class="kode-icon"><i class="fa fa-book"></i></div>
+      </div>
+      <%= render partial: "authors/author", collection: @support.top_authors, as: :author %>
+    </div>
+  </section>
+</div>

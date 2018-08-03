@@ -44,7 +44,7 @@ class Admin::BooksController < Admin::ApplicationController
   private
 
   def load_items
-    @support = Supports::Book.new
+    @support = Supports::Book.new @book
   end
 
   def load_book

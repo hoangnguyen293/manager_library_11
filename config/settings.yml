@@ -26,5 +26,16 @@ min_length_user_password: 6
 borrows_per_page: 5
 categories:
   books_per_page: 8
+authors:
+  books_per_page: 4
 books:
   related_book_limit: 4
+  books_for_top_category: 4
+  latest_books_limit: 4
+homes:
+  categories_in_page: 4
+  authors_in_page: 4
+comments:
+  max_length_content: 500
+  min_rate: 0
+  max_rate: 5

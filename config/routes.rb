@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :categories, only: :show
   resources :books, only: :show
   resources :borrows, only: :create
+  resources :comments, only: :create
+  resources :authors, only: :show
+  resources :search, only: :create
   namespace :admin do
     resources :categories
     resources :publishers

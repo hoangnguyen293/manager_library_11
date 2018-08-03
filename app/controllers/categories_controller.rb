@@ -2,8 +2,11 @@ class CategoriesController < ApplicationController
   before_action :load_category, only: :show
 
   def show
-    @books = @category.books.paginate(page: params[:page],
-      per_page: Settings.categories.books_per_page)
+    respond_to do |format|
+      format.html{@books = @category.books.paginate(page: params[:page],
+        per_page: Settings.categories.books_per_page)}
+      format.js{@books = @category.books.books_for_top_category}
+    end
   end
 
   private

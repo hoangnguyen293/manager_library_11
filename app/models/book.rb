@@ -1,5 +1,6 @@
 class Book < ApplicationRecord
   has_many :borrows, dependent: :destroy
+  has_many :comments, dependent: :destroy
   belongs_to :category
   belongs_to :author
   belongs_to :publisher
@@ -7,6 +8,12 @@ class Book < ApplicationRecord
   scope :related_books, (lambda do |category_id, book_id|
     where("category_id = ? && id != ?", category_id, book_id)
       .limit(Settings.books.related_book_limit)
+  end)
+  scope :books_for_top_category, (lambda do
+    order("created_at desc").limit(Settings.books.books_for_top_category)
+  end)
+  scope :latest_books, (lambda do
+    order("created_at desc").limit(Settings.books.latest_books_limit)
   end)
   mount_uploader :picture, PictureUploader
   validates :name, presence: true,

@@ -6,7 +6,7 @@ function scrollToAnchor(aid){
 }
 
 jQuery(document).ready(function($){
-	
+
 	"use strict";
 
 	/* ---------------------------------------------------------------------- */
@@ -15,12 +15,12 @@ jQuery(document).ready(function($){
 	setTimeout(function(){
 		$('body').addClass('loaded');
 	}, 5);
-	
+
 	/* ---------------------------------------------------------------------- */
 	/*	Search Script
 	/* ---------------------------------------------------------------------- */
 	$(".search-fld").on('click',function(){
-		if($(this).hasClass('minus')){        
+		if($(this).hasClass('minus')){
 			$(this).toggleClass("plus minus");
 			$('.search-area').fadeOut();
 		}else{
@@ -28,7 +28,7 @@ jQuery(document).ready(function($){
 			$(this).toggleClass("minus plus");
 		}
 	});
-	
+
 	/* ---------------------------------------------------------------------- */
 	/*	Slider inside Tabs Script
 	/* ---------------------------------------------------------------------- */
@@ -44,7 +44,7 @@ jQuery(document).ready(function($){
 	$('a[href="#settings2"]').one('shown.bs.tab', function (e) {
 		$('.bxslider-4').bxSlider();
 	});
-	
+
 	$('a[href="#Biographies"]').one('shown.bs.tab', function (e) {
 		$('.bxslider-1').bxSlider();
 	});
@@ -54,9 +54,9 @@ jQuery(document).ready(function($){
 	$('a[href="#Computers"]').one('shown.bs.tab', function (e) {
 		$('.bxslider-4').bxSlider();
 	});
-	
-	
-	
+
+
+
 	/* ---------------------------------------------------------------------- */
 	/*	Back To TOp Script
 	/* ---------------------------------------------------------------------- */
@@ -67,7 +67,7 @@ jQuery(document).ready(function($){
 			$('.back-to-top').css('opacity','0');
 		}
 	});
-	
+
 	/* ---------------------------------------------------------------------- */
 	/*	Back to Top Script
 	/* ---------------------------------------------------------------------- */
@@ -84,7 +84,7 @@ jQuery(document).ready(function($){
 	if($("[rel^='prettyPhoto']").length){
 		$("[rel^='prettyPhoto']").prettyPhoto();
 	}
-	
+
 	/* ---------------------------------------------------------------------- */
 	/*	Tooltip Script
 	/* ---------------------------------------------------------------------- */
@@ -96,9 +96,9 @@ jQuery(document).ready(function($){
 	/*	Owl Slider Owl Demo Script
 	/* ---------------------------------------------------------------------- */
 	if($("#owl-demo").length){
-		 
+
 		var owl = $("#owl-demo");
-		 
+
 		owl.owlCarousel({
 			itemsCustom : [
 				[0, 2],
@@ -110,16 +110,16 @@ jQuery(document).ready(function($){
 			],
 			navigation : true
 		});
-		 
+
 	}
-	
+
 	/* ---------------------------------------------------------------------- */
 	/*	Owl BLog Script
 	/* ---------------------------------------------------------------------- */
 	if($(".owl-blog").length){
-		 
+
 		var owl = $(".owl-blog");
-		 
+
 		owl.owlCarousel({
 			itemsCustom : [
 				[0, 1],
@@ -131,16 +131,16 @@ jQuery(document).ready(function($){
 			],
 			navigation : true
 		});
-		 
+
 	}
-	
+
 	/* ---------------------------------------------------------------------- */
 	/*	Owl Slider Release Script
 	/* ---------------------------------------------------------------------- */
 	if($(".owl-release").length){
-		 
+
 		var owl = $(".owl-release");
-		 
+
 		owl.owlCarousel({
 			itemsCustom : [
 				[0, 1],
@@ -152,16 +152,16 @@ jQuery(document).ready(function($){
 			],
 			navigation : true
 		});
-		 
+
 	}
-	
+
 	/* ---------------------------------------------------------------------- */
 	/*	Owl Slider Library Script
 	/* ---------------------------------------------------------------------- */
 	if($(".owl-library").length){
-		 
+
 		var owl = $(".owl-library");
-		 
+
 		owl.owlCarousel({
 			itemsCustom : [
 				[0, 1],
@@ -173,17 +173,17 @@ jQuery(document).ready(function($){
 			],
 			navigation : true
 		});
-		 
+
 	}
-	
-	
+
+
 	/* ---------------------------------------------------------------------- */
 	/*	Testimonial Slider Script
 	/* ---------------------------------------------------------------------- */
 	if($(".owl-testimonials").length){
-		 
+
 		var owl = $(".owl-testimonials");
-		 
+
 		owl.owlCarousel({
 			itemsCustom : [
 				[0, 1],
@@ -262,7 +262,7 @@ jQuery(document).ready(function($){
 	if($(".bxslider").length){
 		$('.bxslider').bxSlider();
 	}
-	
+
 	/* ---------------------------------------------------------------------- */
 	/*	BxSlider2 Script
 	/* ---------------------------------------------------------------------- */
@@ -274,7 +274,7 @@ jQuery(document).ready(function($){
 		  pause: 2000
 		});
 	}
-	
+
 	/* ---------------------------------------------------------------------- */
 	/*	BxSlider-thumbs Script
 	/* ---------------------------------------------------------------------- */
@@ -291,7 +291,7 @@ jQuery(document).ready(function($){
 		$('.counter').counterUp({
 			delay: 10,
 			time: 1000
-			
+
 		});
 	}
 
@@ -306,7 +306,7 @@ jQuery(document).ready(function($){
 			$('#year').text(austDay.getFullYear());
 		});
 	}
-	
+
 	/* ---------------------------------------------------------------------- */
 	/*	Google Map Script
 	/* ---------------------------------------------------------------------- */
@@ -317,14 +317,14 @@ jQuery(document).ready(function($){
 		zoom: 8
 	  });
 	}
-	
+
 	/* ---------------------------------------------------------------------- */
 	/*	Tabs Script
 	/* ---------------------------------------------------------------------- */
 	if($("#tabs").length){
 		$('#tabs').tab();
 	}
-	
+
 	/* ---------------------------------------------------------------------- */
 	/*	DL Responsive Menu
 	/* ---------------------------------------------------------------------- */
@@ -334,18 +334,18 @@ jQuery(document).ready(function($){
 				if( $(this).siblings('a').attr('href') && $(this).siblings('a').attr('href') != '#' ){
 					var parent_nav = $('<li class="menu-item kode-parent-menu"></li>');
 					parent_nav.append($(this).siblings('a').clone());
-					
+
 					$(this).prepend(parent_nav);
 				}
 			});
 			$(this).dlmenu();
 		});
 	}
-	
+
 	/* ---------------------------------------------------------------------- */
 	/*	Contact Form
 	/* ---------------------------------------------------------------------- */
-	
+
 	if($('#contactform').length) {
 
 		var $form = $('#contactform'),
@@ -368,7 +368,7 @@ jQuery(document).ready(function($){
 			$.post("inc/contact-send.php", data, function(response) {
 
 				response = $.parseJSON(response);
-				
+
 				$(".incorrect-data").removeClass("incorrect-data");
 				$response.find('img').remove();
 
@@ -414,17 +414,17 @@ jQuery(document).ready(function($){
 
 			e.preventDefault();
 
-		});				
+		});
 
 	}
-	
+
 	/* ---------------------------------------------------------------------- */
 	/*	Google Map Script
 	/* ---------------------------------------------------------------------- */
 	if($('#map-canvas').length){
 		google.maps.event.addDomListener(window, 'load', initialize);
 	}
-	
+
 	/* ---------------------------------------------------------------------- */
 	/*	Filterable Script
 	/* ---------------------------------------------------------------------- */
@@ -432,13 +432,13 @@ jQuery(document).ready(function($){
 		jQuery(window).load(function($) {
 			var filter_container = jQuery('#filterable-item-holder-1');
 
-			filter_container.children().css('position','relative');	
+			filter_container.children().css('position','relative');
 			filter_container.masonry({
 				singleMode: true,
 				itemSelector: '.filterable-item:not(.hide)',
 				animate: true,
 				animationOptions:{ duration: 800, queue: false }
-			});	
+			});
 			jQuery(window).resize(function(){
 				var temp_width =  filter_container.children().filter(':first').width()+30;
 				filter_container.masonry({
@@ -447,17 +447,17 @@ jQuery(document).ready(function($){
 					itemSelector: '.filterable-item:not(.hide)',
 					animate: true,
 					animationOptions:{ duration: 800, queue: false }
-				});		
-			});	
-			jQuery('ul#filterable-item-filter-1 a').on('click',function(e){	
+				});
+			});
+			jQuery('ul#filterable-item-filter-1 a').on('click',function(e){
 
 				jQuery(this).addClass("active");
 				jQuery(this).parents("li").siblings().children("a").removeClass("active");
 				e.preventDefault();
-				
+
 				var select_filter = jQuery(this).attr('data-value');
-				
-				if( select_filter == "All" || jQuery(this).parent().index() == 0 ){		
+
+				if( select_filter == "All" || jQuery(this).parent().index() == 0 ){
 					filter_container.children().each(function(){
 						if( jQuery(this).hasClass('hide') ){
 							jQuery(this).removeClass('hide');
@@ -478,13 +478,13 @@ jQuery(document).ready(function($){
 						}
 					});
 				}
-				
-				filter_container.masonry();	
-				
+
+				filter_container.masonry();
+
 			});
 		});
 	}
-	
+
 });
 
 /* ---------------------------------------------------------------------- */
@@ -527,7 +527,7 @@ function initialize() {
 /*	Bookblock Script
 /* ---------------------------------------------------------------------- */
 var Page = (function() {
-	
+
 	var config = {
 			$bookBlock : $( '#bb-bookblock' ),
 			$navNext : $( '#bb-nav-next' ),
@@ -544,7 +544,7 @@ var Page = (function() {
 			initEvents();
 		},
 		initEvents = function() {
-			
+
 			var $slides = config.$bookBlock.children();
 
 			// add navigation events
@@ -567,7 +567,7 @@ var Page = (function() {
 				config.$bookBlock.bookblock( 'last' );
 				return false;
 			} );
-			
+
 			// add swipe events
 			$slides.on( {
 				'swipeleft' : function( event ) {
@@ -609,4 +609,9 @@ var Page = (function() {
 /* ---------------------------------------------------------------------- */
 if($( '#bb-bookblock' ).length){
 	Page.init();
-}	
+}
+$(document).on("ready", function(){
+  $("#rating_book").raty({
+  	start: 0
+  });
+})

@@ -23,3 +23,5 @@
 //= require modernizr.custom
 //= require jquery.dlmenu
 //= require functions
+//= require jquery.raty
+//= require comment

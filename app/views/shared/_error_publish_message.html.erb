@@ -1,0 +1,12 @@
+<% if object.errors.any? %>
+  <div class="alert alert-danger">
+    <%= t "shared.form_constain"%> <%= pluralize(object.errors.count, t("shared.error")) %>.
+  </div>
+  <div class="vali-error">
+    <ul>
+      <% object.errors.full_messages.each do |msg|%>
+        <li><p><%= msg %></p></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

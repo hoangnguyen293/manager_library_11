@@ -172,6 +172,20 @@ en:
   home:
     index:
       title: "Home"
+      top_categories: "Our Top Categories"
+      some_of_the_top: "Here are some of the Top Categories of the Books Available."
+      top_authors: "Our Top Authors"
+      some_of_the_top_author: "Here are some of the Top Authors that are available in Books Library"
+    search: "Search"
+    book_name: "Book name"
+    categories: "Categories"
+    authors: "Authors"
+    publishers: "Publishers"
+  authors:
+    author: "author"
+    not_found_author: "Not found author"
+    show:
+      published_books: "Published Books"
   users:
     new:
       title: "Sign Up"
@@ -193,11 +207,15 @@ en:
     borrowed_date: "Borrowed Date"
     returned_date: "Returned Date"
     borrow: "Borrow"
+    review: "Review book"
+    comment: "Comment"
   borrows:
     create:
       borrowed_created: "Request of you sent, pleach regularly check mail to receive messages"
       create_failed: "Request failed"
       request_failed: "Request failed"
+    not_found_book: "Not found book"
+  comments:
     not_found_book: "Not found book"
   sessions:
     new:

@@ -1,0 +1,14 @@
+<%= form_for :comment, url: comments_path, html: {id: :form_comment} do |f| %>
+  <div>
+    <%= f.hidden_field :book_id, value: @book.id %>
+  </div>
+  <div>
+    <%= f.label t("books.comment") %>
+    <%= f.text_area :content, class: "form-control", rows: 5 %>
+  </div>
+  <div>
+    <p class="kd-button kf_submit widget-newslatter pull-right">
+      <%= f.submit t("books.review"), class: "thbg-color", id: :submit_comment %>
+    </p>
+  </div>
+<% end %>

@@ -1,12 +1,15 @@
 class BooksController < ApplicationController
   before_action :check_login, only: :show
   before_action :load_book, only: :show
+  before_action :load_items, only: :show
 
-  def show
-    @related_books = Book.related_books @book.category_id, @book.id
-  end
+  def show; end
 
   private
+
+  def load_items
+    @support = Supports::Book.new @book
+  end
 
   def load_book
     @book = Book.find_by id: params[:id]

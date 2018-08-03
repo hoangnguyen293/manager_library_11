@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_many :borrows
+  has_many :borrows, dependent: :destroy
+  has_many :comments, dependent: :destroy
   before_save :downcase_email
 
   enum role: {user: 0, admin: 1, superadmin: 2}

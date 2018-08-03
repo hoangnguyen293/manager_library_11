@@ -1,0 +1,33 @@
+<% provide :title, @author.name %>
+<div class="kode-content padding-tb-50">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="lib-book-detail">
+          <div class="row">
+            <div class="col-md-5">
+              <div class="kode-thumb">
+                <%= image_tag @author.picture.url if @author.picture? %>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="kode-text">
+                <h2><%= @author.name %></h2>
+                <div class="book-text">
+                  <p><%= @author.description %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lib-related-products">
+          <h2><%= t ".published_books" %></h2>
+          <div class="row">
+            <%= render @books %>
+          </div>
+          <%= will_paginate @books %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

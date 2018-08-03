@@ -1,0 +1,1 @@
+$("#comments li:eq(0)").before("<%= escape_javascript(render partial: 'comment', object: @comment, as: :comment) %>");
