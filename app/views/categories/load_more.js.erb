@@ -1,0 +1,6 @@
+$("#load-more-category").remove();
+$("#list-category").append("<%= escape_javascript render @categories %>");
+$("#list-category").append("<li id='load-more-category'><%= escape_javascript link_to 'Load more', load_more_category_path(@offset.to_i + Settings.categories.categories_menu_limit), remote: true %></li>");
+<% if @categories.size == 0 %>
+  $("#load-more-category").remove();
+<% end %>

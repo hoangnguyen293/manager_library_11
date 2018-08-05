@@ -1,0 +1,6 @@
+$("#load-more-author").remove();
+$("#list-author").append("<%= escape_javascript render @authors %>");
+$("#list-author").append("<li id='load-more-author'><%= escape_javascript link_to 'Load more', load_more_author_path(@offset.to_i + Settings.authors.authors_menu_limit), remote: true %></li>");
+<% if @authors.size == 0 %>
+  $("#load-more-author").remove();
+<% end %>

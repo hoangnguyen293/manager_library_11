@@ -1,0 +1,13 @@
+<%= form_for :password_reset, url: password_resets_path do |f|%>
+  <div class="col-md-12 col-sm-12">
+    <div class="input-container">
+      <%= f.text_field :email %>
+      <%= f.label t("password_resets.email") %>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <p class="kd-button kf_submit widget-newslatter pull-right">
+      <%= f.submit t("password_resets.new.submit"), class: "thbg-color" %>
+    </p>
+  </div>
+<% end %>

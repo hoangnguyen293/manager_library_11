@@ -2,7 +2,7 @@
   <td><%= link_to author.name, edit_admin_author_path(author) %></td>
   <td><%= author.description %></td>
   <td><%= author.detail %></td>
-  <td><%= image_tag author.picture.url if author.picture? %></td>
+  <td class="app_picture"><%= image_tag author.picture.url if author.picture? %></td>
   <td class="text-nowrap">
     <%= edit_action_tag edit_admin_author_path(author) %>
     <%= delete_action_tag admin_author_path(author) %>

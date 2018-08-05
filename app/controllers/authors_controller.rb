@@ -6,6 +6,15 @@ class AuthorsController < ApplicationController
       per_page: Settings.authors.books_per_page)
   end
 
+  def load_more
+    respond_to do |format|
+      format.js do
+        @authors = Author.load_more params[:id]
+        @offset = params[:id]
+      end
+    end
+  end
+
   private
 
   def load_author

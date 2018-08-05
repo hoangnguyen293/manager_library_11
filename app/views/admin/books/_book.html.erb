@@ -7,7 +7,7 @@
   <td><%= book.category.name %></td>
   <td><%= book.publisher.name %></td>
   <td><%= book.author.name %></td>
-  <td><%= image_tag book.picture.url if book.picture? %></td>
+  <td class="app_picture"><%= image_tag book.picture.url if book.picture? %></td>
   <td class="text-nowrap">
     <%= edit_action_tag edit_admin_book_path(book) %>
     <%= delete_action_tag admin_book_path(book) %>

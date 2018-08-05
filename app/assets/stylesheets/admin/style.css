@@ -9053,4 +9053,8 @@ ul.inbox-nav li a:hover, ul.inbox-nav li.active a, ul.inbox-nav li a:focus {
 .vali-error{
   color: red;
 }
+.app_picture img{
+  width: 90px;
+  height: 120px;
+}
 /*# sourceMappingURL=style.css.map */

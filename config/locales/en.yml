@@ -6,13 +6,22 @@ en:
     welcome_library: "Welcome to Library"
     home: "Home"
     categories: "Categories"
+    authors: "Authors"
     please_log_in: "Please log in."
+    login: "Login"
+    logout: "Logout"
+    signup: "signup"
   admin:
     application:
       copy_right: "2018 © Library Management. Design by KodeForest"
       management: "Management"
       categories: "Categories"
       publishers: "Publishers"
+      books: "Books"
+      users: "Users"
+      borrows: "Borrows"
+      authors: "Authors"
+      comments: "Comments"
       main: "Main"
       please_log_in: "Please log in."
       not_access: "Don't access"
@@ -98,6 +107,7 @@ en:
         publisher: "Publisher"
         author: "Author"
         picture: "Picture"
+        search_result: "Search result"
       new:
         title: "Add book"
         add_book: "Add a book"
@@ -121,6 +131,11 @@ en:
       publisher: "Publisher"
       author: "Author"
       picture: "Picture"
+      book_name: "Book name"
+      category: "Category"
+      author: "Author"
+      publisher: "Publisher"
+      search: "Search"
     users:
       index:
         title: "All users"
@@ -149,9 +164,24 @@ en:
       role: "Role"
       not_delete: "Don't have role to delete"
       not_access: "Don't access"
+    comments:
+      index:
+        title: "All comments"
+        comments: "Comments"
+        email: "Email"
+        book_name: "Book name"
+        score: "Score"
+        content: "Content"
+      destroy:
+        delete_failed: "Delete failed"
+        comment_deleted: "Comment deleted"
+      not_found_comment: "Not found comment"
     borrows:
       index:
         title: "All borrowed requests"
+        search_result: "Search result"
+        email: "Email"
+        book_name: "Book name"
         borrows: "borrowed requests"
         borrowed_date: "Borrowed date"
         returned_date: "Returned date"
@@ -169,6 +199,9 @@ en:
       not_found_borrow: "Not found borrowed request"
       error_email_sent: "Email sent or borrowed"
       error_borrowed: "Email is not sent or borrowed"
+      email: "Email"
+      book_name: "Book name"
+      search: "Search"
   home:
     index:
       title: "Home"
@@ -190,7 +223,15 @@ en:
     new:
       title: "Sign Up"
       confirmation: "Confirmation"
-      create_my_account: "Create my account"
+    create:
+      check_your_mail: "Please check your email to activate your account."
+    edit:
+      title: "Edit user"
+    update:
+      profile_update: "Profile updated"
+    save_change: "Save changes"
+    create_my_account: "Create my account"
+    confirmation: "Password Confirmation"
   categories:
     not_found_category: "Not found category"
     show:
@@ -209,12 +250,18 @@ en:
     borrow: "Borrow"
     review: "Review book"
     comment: "Comment"
+  search:
+    index:
+      title: "Search result"
+      not_found_result: "Not found result"
   borrows:
     create:
       borrowed_created: "Request of you sent, pleach regularly check mail to receive messages"
       create_failed: "Request failed"
       request_failed: "Request failed"
     not_found_book: "Not found book"
+    brrowed_date_after_now: "must be after now"
+    validate_returned_date: "must be after borrowed date"
   comments:
     not_found_book: "Not found book"
   sessions:
@@ -225,6 +272,29 @@ en:
     email: "Email"
     password: "Password"
     login_account: "Login Account"
+    account_not_activated: "Account not activated. Check your email for the activation link."
+    forgot_password: "Forgot password"
+  account_activations:
+    edit:
+      account_activated: "Account activated!"
+      invalid_activation: "Invalid activation link"
+  password_resets:
+    new:
+      title: "Forgot password"
+      submit: "Submit"
+    create:
+      email_sented: "Email sent with password reset instructions"
+      not_found_email: "Email address not found"
+    edit:
+      title: "Reset password"
+      confirmation: "Password Confirmation"
+      update_password: "Update password"
+    update:
+      not_empty: "Can't be empty"
+      reset_success: "Password has been reset."
+    check_expiration:
+      password_reset_expired: "Password reset has expired."
+    email: "Email"
   shared:
     form_constain: "The form contains"
     error: "error"
@@ -238,6 +308,23 @@ en:
     borrowed_date: "Borrowed date"
     returned_date: "Returned date"
     error_email_sent: "Send mail failed"
+    account_activation:
+      sample_app: "Sample App"
+      welcome: "Welcome to the Sample App! Click on the link below to activate your account:"
+      activate: "Activate"
+      hi: "Hi"
+      account: "Account activation"
+    password_reset:
+      reset_password: "Password reset"
+      click_link: "To reset your password click the link below:"
+      reset_pass: "Reset password"
+      expire: "This link will expire in two hours."
+      ignore_email: "If you did not request your password to be reset, please ignore this email and
+                      your password will stay as it is."
+      get_user:
+        warning: "Not found user"
+      valid_user:
+        warning: "Link invalid"
   add: "Add"
   edit: "Edit"
   borrowed: "Borrowed"

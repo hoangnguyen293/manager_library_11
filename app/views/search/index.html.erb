@@ -1,0 +1,15 @@
+<% provide :title, t(".title") %>
+<div class="kode-content padding-tb-50">
+  <div class="container">
+    <div class="kode-product-filter">
+    </div>
+    <div class="row">
+      <% if @books.size != 0 %>
+        <%= render partial: "books/book", collection: @books, as: :book %>
+      <% else %>
+        <p class="vali-error"><%= t ".not_found_result" %></p>
+      <% end %>
+    </div>
+    <%= will_paginate @books %>
+  </div>
+</div>

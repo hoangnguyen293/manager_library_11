@@ -24,10 +24,14 @@ max_length_user: 50
 max_length_user_email: 255
 min_length_user_password: 6
 borrows_per_page: 5
+comments_per_page: 5
+expired_time: 2
 categories:
   books_per_page: 8
+  categories_menu_limit: 4
 authors:
   books_per_page: 4
+  authors_menu_limit: 4
 books:
   related_book_limit: 4
   books_for_top_category: 4
@@ -39,3 +43,5 @@ comments:
   max_length_content: 500
   min_rate: 0
   max_rate: 5
+search:
+  books_per_page: 8

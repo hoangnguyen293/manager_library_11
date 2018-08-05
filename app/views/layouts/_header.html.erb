@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-md-3">
           <div class="logo">
-            <%= link_to image_tag("logo-2.png"), "#" %>
+            <%= link_to image_tag("logo-2.png"), root_path %>
           </div>
         </div>
         <div class="col-md-9">
@@ -15,14 +15,32 @@
             <div class="pull-left">
               <p><%= t "application.welcome_library" %></p>
             </div>
+            <div class="social-icon">
+              <% if logged_in? %>
+                <%= link_to current_user.name, edit_user_path(current_user), class: "pull-left" %>
+                <%= link_to t("application.logout"), logout_path, class: "pull-left",
+                  method: :delete %>
+              <% else %>
+                <%= link_to t("application.signup"), signup_path, class: "pull-left" %>
+                <%= link_to t("application.login"), login_path, class: "pull-left" %>
+              <%end %>
+            </div>
           </div>
           <div class="kode-navigation">
             <ul>
               <li><%= link_to t("application.home"), root_path %></li>
               <li>
                 <%= link_to t("application.categories"), category_path(@categories.first) %>
-                <ul>
+                <ul id="list-category">
                   <%= render @categories %>
+                  <li id="load-more-category"><%= link_to "Load more", load_more_category_path(Settings.categories.categories_menu_limit), remote: true %></li>
+                </ul>
+              </li>
+              <li>
+                <%= link_to t("application.authors"), author_path(@authors.first) %>
+                <ul id="list-author">
+                  <%= render @authors %>
+                  <li id="load-more-author"><%= link_to "Load more", load_more_author_path(Settings.authors.authors_menu_limit), remote: true %></li>
                 </ul>
               </li>
             </ul>

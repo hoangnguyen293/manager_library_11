@@ -1,0 +1,15 @@
+<% provide :title, t(".title") %>
+<div class="kode-content padding-tb-50">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="comment-form">
+          <%= render "shared/error_publish_message", object: @user %>
+          <div class="row">
+            <%= render "form_edit" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

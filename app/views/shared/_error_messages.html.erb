@@ -1,1 +1,13 @@
-
+<% if object.errors.any? %>
+  <h6 class="txt-dark capitalize-font">
+    <i class="zmdi zmdi-info-outline mr-10"></i>
+    <%= t "shared.form_constain" %> <%= pluralize object.errors.count, t("shared.error") %>
+  </h6>
+  <div class="vali-error ml-25">
+    <ul>
+      <% object.errors.full_messages.each do |msg|%>
+        <li><p><%= msg %></p></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

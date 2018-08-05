@@ -4,7 +4,6 @@ class Book < ApplicationRecord
   belongs_to :category
   belongs_to :author
   belongs_to :publisher
-  default_scope{order created_at: :desc}
   scope :related_books, (lambda do |category_id, book_id|
     where("category_id = ? && id != ?", category_id, book_id)
       .limit(Settings.books.related_book_limit)
@@ -28,4 +27,35 @@ class Book < ApplicationRecord
   validates :pages,
     numericality: {only_integer: true,
                    greater_than_or_equal_to: Settings.min_book_pages}
+
+  def find_books search_params
+    @books = Book.joins(:category, :author, :publisher).order("created_at desc")
+    find_books_by_name search_params[:name]
+    find_books_by_category search_params[:category_name]
+    find_books_by_author search_params[:author_name]
+    find_books_by_publish search_params[:publisher_name]
+    @books
+  end
+
+  private
+
+  def find_books_by_name name
+    return unless name.present?
+    @books = @books.where("books.name like ?", "%" + name + "%")
+  end
+
+  def find_books_by_category category_name
+    return unless category_name.present?
+    @books = @books.where("categories.name like ?", "%" + category_name + "%")
+  end
+
+  def find_books_by_author author_name
+    return unless author_name.present?
+    @books = @books.where("authors.name like ?", "%" + author_name + "%")
+  end
+
+  def find_books_by_publish publisher_name
+    return unless publisher_name.present?
+    @books = @books.where("publishers.name like ?", "%" + publisher_name + "%")
+  end
 end

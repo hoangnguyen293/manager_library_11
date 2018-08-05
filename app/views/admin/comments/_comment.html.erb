@@ -1,0 +1,9 @@
+<tr>
+  <td><%= comment.user.email %></td>
+  <td><%= comment.book.name %></td>
+  <td><%= comment.rate %></td>
+  <td><%= comment.content %></td>
+  <td class="text-nowrap">
+    <%= delete_action_tag admin_comment_path(comment) %>
+  </td>
+</tr>

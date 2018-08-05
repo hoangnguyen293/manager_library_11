@@ -1,19 +1,19 @@
-<%= form_for :search, url: search_index_path do |f| %>
+<%= form_for :search, url: search_index_path, html: {method: :get} do |f| %>
   <div class="col-md-3 col-sm-4">
     <%= f.label t("home.book_name") %>
     <%= f.text_field :name%>
   </div>
   <div class="col-md-2 col-sm-4">
     <%= f.label t("home.categories"), class: "control-label mb-10" %>
-    <%= f.select :category_id, @support.categories.map {|c| [c.name, c.id]}, {}, class: "form-control" %>
+    <%= f.text_field :category_name %>
   </div>
   <div class="col-md-2 col-sm-4">
     <%= f.label t("home.authors"), class: "control-label mb-10" %>
-    <%= f.select :author_id, @support.authors.map {|a| [a.name, a.id]}, {}, class: "form-control" %>
+    <%= f.text_field :author_name %>
   </div>
   <div class="col-md-2 col-sm-4">
     <%= f.label t("home.publishers"), class: "control-label mb-10" %>
-    <%= f.select :publisher_id, @support.publishers.map {|p| [p.name, p.id]}, {}, class: "form-control" %>
+    <%= f.text_field :publisher_name %>
   </div>
   <div class="col-md-3 col-sm-12">
     <%= f.label t("home.search") %>

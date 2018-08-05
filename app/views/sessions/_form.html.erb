@@ -12,6 +12,11 @@
     </div>
   </div>
   <div class="col-md-12">
+    <p>
+      <%= link_to t("sessions.forgot_password"), new_password_reset_path %>
+    </p>
+  </div>
+  <div class="col-md-12">
     <p class="kd-button kf_submit widget-newslatter pull-right">
       <%= f.submit t("sessions.login_account"), class: "thbg-color" %>
     </p>

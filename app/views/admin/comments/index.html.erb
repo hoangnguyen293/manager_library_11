@@ -1,0 +1,38 @@
+<% provide :title, t(".title") %>
+<div class="container-fluid">
+  <div class="row heading-bg">
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+      <h5 class="txt-dark"><%= t ".comments" %></h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-default card-view">
+        <div class="panel-wrapper collapse in">
+          <div class="panel-body">
+            <%= render "shared/messages" %>
+            <div class="table-wrap mt-40">
+              <div class="table-responsive">
+                <table class="table table-hover table-bordered mb-0">
+                  <thead>
+                    <tr>
+                      <th><%= t ".email" %></th>
+                      <th><%= t ".book_name" %></th>
+                      <th><%= t ".score" %></th>
+                      <th><%= t ".content" %></th>
+                      <th class="text-nowrap"><%= t ".action" %></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <%= render @comments %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <%= will_paginate %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

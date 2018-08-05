@@ -8,7 +8,7 @@ class BorrowsController < ApplicationController
       if @borrow.save
         format.js{flash.now[:success] = t(".borrowed_created")}
       else
-        format.js{flash.now[:danger] = t(".create_failed")}
+        format.js{render :error_validate}
       end
     end
   end

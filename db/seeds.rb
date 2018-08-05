@@ -36,5 +36,5 @@ end
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
   User.create!(name: name, email: email, role: rand(3), password: password,
-    password_confirmation: password)
+    password_confirmation: password, activated: :true)
 end

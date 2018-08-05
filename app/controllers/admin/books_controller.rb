@@ -1,10 +1,12 @@
 class Admin::BooksController < Admin::ApplicationController
-  before_action :load_book, except: %i(index new create)
-  before_action :load_items, except: %i(index show destroy)
+  before_action :load_book, except: %i(index new create search)
+  before_action :load_items, except: %i(index show destroy search)
+  before_action :check_params, only: :search
 
   def index
     @books = Book.paginate(page: params[:page],
       per_page: Settings.books_per_page)
+    store_location
   end
 
   def new
@@ -26,7 +28,7 @@ class Admin::BooksController < Admin::ApplicationController
   def update
     if @book.update_attributes(book_params)
       flash[:sun] = t ".book_updated"
-      redirect_to admin_books_path
+      redirect_back_or admin_books_path
     else
       render :edit
     end
@@ -38,7 +40,13 @@ class Admin::BooksController < Admin::ApplicationController
     else
       flash[:lock] = t ".delete_failed"
     end
-    redirect_to admin_books_path
+    redirect_back_or admin_books_path
+  end
+
+  def search
+    @books = Book.new.find_books(search_params).paginate(page: params[:page],
+      per_page: Settings.books_per_page)
+    store_location
   end
 
   private
@@ -57,5 +65,16 @@ class Admin::BooksController < Admin::ApplicationController
   def book_params
     params.require(:book).permit :name, :description, :detail, :edition,
       :pages, :category_id, :publisher_id, :author_id, :picture
+  end
+
+  def search_params
+    params.require(:search).permit :name, :category_name,
+      :author_name, :publisher_name
+  end
+
+  def check_params
+    search_params
+  rescue ActionController::ParameterMissing
+    redirect_to admin_books_path
   end
 end

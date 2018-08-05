@@ -1,0 +1,31 @@
+<%= form_for @user, url: signup_path do |f|%>
+  <div class="col-md-12 col-sm-12">
+    <div class="input-container">
+      <%= f.text_field :name %>
+      <%= f.label :name %>
+    </div>
+  </div>
+  <div class="col-md-12 col-sm-12">
+    <div class="input-container">
+      <%= f.text_field :email %>
+      <%= f.label :email %>
+    </div>
+  </div>
+  <div class="col-md-12 col-sm-12">
+    <div class="input-container">
+      <%= f.password_field :password %>
+      <%= f.label :password %>
+    </div>
+  </div>
+  <div class="col-md-12 col-sm-12">
+    <div class="input-container">
+      <%= f.label :password_confirmation, t("users.confirmation") %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <p class="kd-button kf_submit widget-newslatter pull-right">
+      <%= f.submit t("users.create_my_account"), class: "thbg-color" %>
+    </p>
+  </div>
+<% end %>

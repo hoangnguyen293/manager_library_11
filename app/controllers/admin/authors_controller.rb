@@ -4,6 +4,7 @@ class Admin::AuthorsController < Admin::ApplicationController
   def index
     @authors = Author.paginate(page: params[:page],
       per_page: Settings.authors_per_page)
+    store_location
   end
 
   def new
@@ -25,7 +26,7 @@ class Admin::AuthorsController < Admin::ApplicationController
   def update
     if @author.update_attributes(author_params)
       flash[:sun] = t ".author_updated"
-      redirect_to admin_authors_path
+      redirect_back_or admin_authors_path
     else
       render :edit
     end
@@ -37,7 +38,7 @@ class Admin::AuthorsController < Admin::ApplicationController
     else
       flash[:lock] = t ".delete_failed"
     end
-    redirect_to admin_authors_path
+    redirect_back_or admin_authors_path
   end
 
   private

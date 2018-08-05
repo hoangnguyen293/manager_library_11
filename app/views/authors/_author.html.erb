@@ -1,7 +1,1 @@
-<div class="lib-authors">
-  <%= image_tag author.picture.url if author.picture? %>
-  <div class="kode-caption">
-    <h4><%= link_to author.name, author_path(author) %></h4>
-    <p><%= t "authors.author" %></p>
-  </div>
-</div>
+<li><%= link_to author.name, author_path(author) %></li>
